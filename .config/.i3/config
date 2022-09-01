@@ -212,6 +212,7 @@ bindsym $mod+shift+x exec i3lock
 # exec_always feh --bg-fill /home/alravid/.dotfiles/wallpapers/wallpaper5.jpg
 
 # set random wallpaper
-bindsym $mod+b exec --no-startup-id feh /home/alravid/.dotfiles/wallpapers/* --recursive --randomize --bg-fill
+bindsym $mod+b exec --no-startup-id feh /home/doni/dotfiles/wallpapers/* --recursive --randomize --bg-fill
 
-
+# set standard keyboard layout 
+exec "setxkbmap -layout pt"
