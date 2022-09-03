@@ -217,11 +217,11 @@ bar {
 # lock screen
 bindsym $mod+shift+x exec i3lock
 
-# set a specific wallpaper
-exec_always feh --bg-fill /home/alravid/.dotfiles/wallpapers/wallpaper5.jpg
+# set wallpaper
+exec_always --no-startup-id feh /home/doni/dotfiles/wallpapers/wallpaper15.jpg --bg-fill
 
-# set random wallpaper
-#bindsym $mod+b exec --no-startup-id feh /home/doni/dotfiles/wallpapers/* --recursive --randomize --bg-fill
+# picom
+exec_always --no-startup-id picom -b
 
 # set standard keyboard layout 
 exec "setxkbmap -layout pt"
