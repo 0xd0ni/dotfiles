@@ -223,8 +223,6 @@ exec_always --no-startup-id feh /home/doni/dotfiles/wallpapers/wallpaper15.jpg -
 # picom
 exec_always --no-startup-id picom -b
 
-# set standard keyboard layout 
-exec "setxkbmap -layout pt"
 
 # gaps
 for_window [class=" .*"] border pixel 0
