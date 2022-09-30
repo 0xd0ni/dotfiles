@@ -2,4 +2,18 @@
 	name = Allan Fernandes
 	email = 64441383+acravid@users.noreply.github.com
 [color]
-	ui = true
+  ui = auto
+  status = auto
+  diff = auto
+  branch = auto
+  showBranch = auto
+  interactive = auto
+[commit]
+  template = ~/.gitmessage
+[core]
+  editor = nvim
+  #TODO
+  # add excludefiles settings
+
+[init]
+  defaultBranch = main
