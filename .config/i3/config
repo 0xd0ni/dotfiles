@@ -241,7 +241,7 @@ gaps inner 15
  
 bar {
     font pango:DejaVu Sans Mono, FontAwesome 10
-    position top
+    position bottom
     status_command ~/.cargo/bin/i3status-rs  ~/.config/i3status-rust/config.toml
     colors {
         separator #FFFFFF
