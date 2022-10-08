@@ -220,29 +220,47 @@ bindsym $mod+shift+x exec i3lock
 # set wallpaper
 exec_always --no-startup-id feh /home/doni/dotfiles/wallpapers/wallpaper15.jpg --bg-fill
 
-# picom
+
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# => picom
+
 exec_always --no-startup-id picom -b
 
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-# dunst
-# temporary fix 
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# => dunst
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 exec_always --no-startup-id dunst
-# screenshots
+
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# => screenshots
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 bindsym Print exec --no-startup-id maim "/home/doni/Pictures/$(date).png"
 bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/doni/Pictures/$(date).png"
 bindsym Shift+Print exec --no-startup-id maim --select "/home/doni/Pictures/$(date).png"
 
-## Clipboard Screenshots
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# => Clipboard Screenshots
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
 bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
-# gaps
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# => gaps
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 for_window [class=" .*"] border pixel 0
 gaps inner 15
+gaps outer 1
+smart_gaps on
 
-# i3status-rust (bar)
- 
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+# => (bar) i3status-rust
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+
 bar {
     font pango:DejaVu Sans Mono, FontAwesome 10
     position bottom
@@ -257,3 +275,5 @@ bar {
         urgent_workspace #2f343a #900000 #2f343a
     }
 }
+
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
