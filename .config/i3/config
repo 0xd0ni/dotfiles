@@ -225,6 +225,13 @@ bindsym $mod+shift+x exec i3lock
 # set wallpaper
 exec_always --no-startup-id feh /home/doni/dotfiles/wallpapers/wallpaper15.jpg --bg-fill
 
+# assign applications to a specific workspace
+
+assign [class="firefox|brave-browser"]                      → 3 
+assign [class="Alacritty|urxv|gnome-terminal-server"]       → 4
+# TODO: assign a reading workspace (fun)
+#       assign a studying workspace
+#       find nvim window class
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # => picom
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
