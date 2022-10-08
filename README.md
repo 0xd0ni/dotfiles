@@ -16,4 +16,3 @@ This is my collection of dotfiles
 
 ---
 
-work in progress
