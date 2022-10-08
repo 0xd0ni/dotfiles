@@ -42,6 +42,11 @@ format_mem = "$mem_total_used_percents.eng(2)"
 format_swap = "$swap_used_percents.eng(2)"
 
 [[block]]
+block = "custom"
+command = "sed 's/  //' <(curl 'https://wttr.in/Sintra?format=%c:+%t+%f+%w' -s)"
+interval = 5000
+
+[[block]]
 block = "sound"
 [[block.click]]
 button = "left"
