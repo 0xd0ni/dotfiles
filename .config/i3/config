@@ -223,7 +223,7 @@ bindsym Mod1+r mode "resize"
 bindsym $mod+shift+x exec i3lock
 
 # set wallpaper
-exec_always --no-startup-id feh /home/doni/dotfiles/wallpapers/wallpaper15.jpg --bg-fill
+exec_always --no-startup-id feh /home/doni/dotfiles/wallpapers/wallpaper4.jpg --bg-fill
 
 # assign applications to a specific workspace
 
