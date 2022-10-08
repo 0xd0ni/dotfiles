@@ -2,7 +2,7 @@
 
 This is my collection of dotfiles
 
-![img](/screenshots/img_1.png)
+![img](/screenshots/img_2.png)
 
 ## Information   	         	                                  
 |           |                                                     | 
