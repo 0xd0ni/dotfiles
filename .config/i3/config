@@ -219,6 +219,9 @@ bindsym Mod1+r mode "resize"
 # => common
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
+# authentication agent
+exec --no-startup-id /usr/bin/lxpolkit
 # mounting disk utility
 bindsym $mod+ctrl+d exec --no-startup-id gnome-disks
 # lock screen
