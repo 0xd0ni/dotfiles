@@ -221,7 +221,9 @@ bindsym $mod+r mode "resize"
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-# authentication agent
+# open fenix 
+bindsym $mod+ctrl+f exec xdg-open https://fenix.tecnico.ulisboa.pt
+
 #exec --no-startup-id /usr/bin/lxpolkit
 # mounting disk utility
 bindsym $mod+ctrl+d exec --no-startup-id gnome-disks
