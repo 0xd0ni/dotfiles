@@ -287,7 +287,7 @@ smart_gaps on
 bar {
     font pango:DejaVu Sans Mono, FontAwesome 10
     position bottom
-    status_command ~/.cargo/bin/i3status-rs  /home/doni/.config/i3status-rs/config.toml
+    status_command /usr/bin/i3status-rs /home/doni/.config/i3status-rs/config.toml
     colors {
         separator #FFFFFF
         background #000000
