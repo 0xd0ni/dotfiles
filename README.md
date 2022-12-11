@@ -2,7 +2,11 @@
 
 This is my collection of dotfiles
 
-![img](/screenshots/img_2.png)
+![img](/screenshots/img_3.png)
+
+
+![img](/screenshots/img_4.png)
+
 
 ## Information   	         	                                  
 |           |                                                     | 
