@@ -230,7 +230,10 @@ bindsym $mod+ctrl+d exec --no-startup-id gnome-disks
 # lock screen
 bindsym $mod+shift+x exec i3lock
 
- 
+# cycle through the wallpaper folder 
+
+bindsym $mod+ctrl+w exec feh --bg-fill --randomize /home/doni/dotfiles/wallpapers/* 
+
 # set wallpaper
 exec_always --no-startup-id feh /home/doni/dotfiles/wallpapers/wallpaper21.png --bg-fill
 
