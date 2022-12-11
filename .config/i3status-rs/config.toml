@@ -1,8 +1,8 @@
 
 
 theme = "solarized-dark"
-idle_bg = { link = "#27a4e3" }
-idle_fg = { link = "#cc1818" }
+idle_bg = { link = "#cc1818" }
+idle_fg = { link = "#262b2b" }
 icons = "awesome"
 
 [[block]]
