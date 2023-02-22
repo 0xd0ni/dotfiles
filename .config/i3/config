@@ -249,6 +249,13 @@ assign [class="Alacritty|urxv|gnome-terminal-server"]       → 4
 # TODO: assign a reading workspace (fun)
 #       assign a studying workspace
 #       find nvim window class
+
+
+# uncategorized  
+
+# TODO: write a wrapper to move an application to a specific workspace 
+# exec script
+
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # => picom
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
