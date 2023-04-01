@@ -244,10 +244,11 @@ exec --no-startup-id setxkbmap -layout 'us,pt' -variant qwerty -option 'grp:shif
 
 # assign applications to a specific workspace
 
-assign [class="firefox|brave-browser"]                      → 3 
-assign [class="Alacritty|urxv|gnome-terminal-server"]       → 4
+assign [class="firefox|Brave-browser"]                      → 1
+assign [class="Alacritty|urxv|gnome-terminal-server"]       → 2
 # TODO: assign a reading workspace (fun)
 #       assign a studying workspace
+#       how to assign app_images to workspaces ?
 #       find nvim window class
 
 
