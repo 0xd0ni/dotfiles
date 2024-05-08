@@ -235,7 +235,7 @@ bindsym $mod+shift+x exec i3lock
 bindsym $mod+ctrl+w exec feh --bg-fill --randomize /home/doni/dotfiles/wallpapers/* 
 
 # set wallpaper
-exec_always --no-startup-id feh /home/doni/dotfiles/wallpapers/wallpaper21.png --bg-fill
+exec_always --no-startup-id feh /home/doni/dotfiles/wallpapers/wallpaper29.png --bg-fill
 
 
 # switch keyboard layout
@@ -300,7 +300,7 @@ smart_gaps on
 
 bar {
     font pango:DejaVu Sans Mono, FontAwesome 10
-    position bottom
+    position top
     status_command /usr/bin/i3status-rs /home/doni/.config/i3status-rs/config.toml
     colors {
         separator #FFFFFF
@@ -313,5 +313,4 @@ bar {
     }
 }
 
-#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
