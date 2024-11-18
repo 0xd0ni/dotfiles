@@ -2,13 +2,13 @@
 
 This is my collection of dotfiles
 
-![img](/screenshots/img_3.png)
+![img](/screenshots/img_6.png)
 
 
-![img](/screenshots/img_4.png)
+![img](/screenshots/img_5.png)
 
 
-## Information   	         	                                  
+## Overview   	         	                                  
 |           |                                                     | 
 |---	      | ---	                                                |
 | OS:  	    | [Fedora 41](https://getfedora.org/en/)  	              |
