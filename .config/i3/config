@@ -261,7 +261,7 @@ assign [class="Alacritty|urxv|gnome-terminal-server"]       → 2
 # => picom
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-exec_always --no-startup-id picom -b
+exec_always --no-startup-id picom --backend glx
 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # => dunst
