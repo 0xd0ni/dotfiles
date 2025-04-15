@@ -123,7 +123,7 @@ bindsym $mod+minus scratchpad show
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
-set $ws4 "3"
+set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -246,7 +246,7 @@ exec --no-startup-id setxkbmap -layout 'us,pt' -variant qwerty -option 'grp:shif
 
 assign [class="firefox|Brave-browser"] 1
 assign [class="Alacritty|urxv|gnome-terminal-server"] 2
-assign [class="obsidian"] 4  
+assign [class="obsidian"] 4
 
 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
