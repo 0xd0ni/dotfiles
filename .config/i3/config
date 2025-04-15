@@ -13,7 +13,8 @@
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 9
+
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -31,7 +32,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 set $mod Mod1
-set $alt $mod
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -123,7 +123,7 @@ bindsym $mod+minus scratchpad show
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
-set $ws4 "4"
+set $ws4 "3"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -232,10 +232,10 @@ bindsym $mod+shift+x exec i3lock
 
 # cycle through the wallpaper folder 
 
-bindsym $mod+ctrl+w exec feh --bg-fill --randomize /home/doni/dotfiles/wallpapers/* 
+bindsym $mod+ctrl+w exec feh --bg-fill --randomize $HOME/dotfiles/wallpapers/* 
 
 # set wallpaper
-exec_always --no-startup-id feh /home/doni/dotfiles/wallpapers/wallpaper29.png --bg-fill
+exec --no-startup-id feh $HOME/dotfiles/wallpapers/wallpaper29.png --bg-fill
 
 
 # switch keyboard layout
@@ -244,18 +244,10 @@ exec --no-startup-id setxkbmap -layout 'us,pt' -variant qwerty -option 'grp:shif
 
 # assign applications to a specific workspace
 
-assign [class="firefox|Brave-browser"]                      → 1
-assign [class="Alacritty|urxv|gnome-terminal-server"]       → 2
-# TODO: assign a reading workspace (fun)
-#       assign a studying workspace
-#       how to assign app_images to workspaces ?
-#       find nvim window class
+assign [class="firefox|Brave-browser"] 1
+assign [class="Alacritty|urxv|gnome-terminal-server"] 2
+assign [class="obsidian"] 4  
 
-
-# uncategorized  
-
-# TODO: write a wrapper to move an application to a specific workspace 
-# exec script
 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # => picom
@@ -273,9 +265,9 @@ exec_always --no-startup-id dunst
 # => screenshots
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-bindsym Print exec --no-startup-id maim "/home/doni/Pictures/$(date).png"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/doni/Pictures/$(date).png"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/doni/Pictures/$(date).png"
+bindsym Print exec --no-startup-id maim "$HOME/Pictures/$(date).png"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "$HOME/Pictures/$(date).png"
+bindsym Shift+Print exec --no-startup-id maim --select "$HOME/Pictures/$(date).png"
 
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # => Clipboard Screenshots
@@ -301,7 +293,7 @@ smart_gaps on
 bar {
     font pango:DejaVu Sans Mono, FontAwesome 10
     position top
-    status_command /usr/bin/i3status-rs /home/doni/.config/i3status-rs/config.toml
+    status_command /usr/bin/i3status-rs $HOME/.config/i3status-rs/config.toml
     colors {
         separator #FFFFFF
         background #000000
