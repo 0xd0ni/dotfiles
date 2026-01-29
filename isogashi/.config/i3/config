@@ -240,7 +240,7 @@ exec --no-startup-id feh $HOME/dotfiles/wallpapers/wallpaper29.png --bg-fill
 
 # switch keyboard layout
 #exec --no-startup-id setxkbmap -model pc105 -layout 'pt,us' -variant qwerty -option 'grp:' 
-exec --no-startup-id setxkbmap -layout 'us,pt' -variant qwerty -option 'grp:shifts_toggle'
+exec --no-startup-id setxkbmap -layout 'us,pt' -variant qwerty -option 'grp:toggle'
 
 # assign applications to a specific workspace
 
