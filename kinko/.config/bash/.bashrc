@@ -1,50 +1,93 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
+# Load starship prompt if starship is installed
+if [ -x /usr/bin/starship ]; then
+	__main() {
+		local major="${BASH_VERSINFO[0]}"
+		local minor="${BASH_VERSINFO[1]}"
 
-# User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:$HOME/.cargo/bin" ]]
-then
-   PATH="$HOME/.local/bin:$HOME/bin:$HOME/.cargo/bin:$HOME/lingo/julia/bin:$PATH" 
-fi
-export PATH
-
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# User specific aliases and functions
-if [ -d ~/.bashrc.d ]; then
-	for rc in ~/.bashrc.d/*; do
-		if [ -f "$rc" ]; then
-			. "$rc"
+		if ((major > 4)) || { ((major == 4)) && ((minor >= 1)); }; then
+			source <("/usr/bin/starship" init bash --print-full-init)
+		else
+			source /dev/stdin <<<"$("/usr/bin/starship" init bash --print-full-init)"
 		fi
-	done
+	}
+	__main
+	unset -f __main
 fi
 
-unset rc
 
-export XDG_CONFIG_HOME="$HOME/.config"
+## Useful aliases
 
-###############################################
-#                alias                        #
-################################################
-
-# git
-alias addall='git add .'
-alias branch='git branch'
-alias checkout='git checkout'
-alias clone='git clone'
-alias commit='git commit -m'
-alias fetch='git fetch'
-alias pull='git pull origin'
-alias push='git push origin'
-alias status='git status'
-alias tag='git tag'
-alias newtag='git tag -a'
+# Replace ls with eza
+if [[ -x /usr/bin/eza ]]; then
+  alias ls='eza -al --color=always --group-directories-first --icons'     # preferred listing
+  alias la='eza -a --color=always --group-directories-first --icons'      # all files and dirs
+  alias ll='eza -l --color=always --group-directories-first --icons'      # long format
+  alias lt='eza -aT --color=always --group-directories-first --icons'     # tree listing
+  alias l.='eza -ald --color=always --group-directories-first --icons .*' # show only dotfiles
+fi
 
 
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Replace some more things with better alternatives
+if [[ -x /usr/bin/bat ]]; then
+  alias cat='bat --style header --style snip --style changes --style header'
+fi
+
+[ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
+
+# aliases: tmux
+alias tn="tmux new-session -s"
+alias tl="tmux list-sessions"
+alias ta="tmux attach-session"
+
+# Common use
+alias grubup="sudo update-grub"
+alias fixpacman="sudo rm /var/lib/pacman/db.lck"
+alias tarnow='tar -acf '
+alias untar='tar -zxvf '
+alias wget='wget -c '
+alias rmpkg="sudo pacman -Rdd"
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+alias upd='/usr/bin/garuda-update'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='ugrep --color=auto'
+alias fgrep='ugrep -F --color=auto'
+alias egrep='ugrep -E --color=auto'
+alias hw='hwinfo --short'                          # Hardware Info
+alias big="expac -H M '%m\t%n' | sort -h | nl"     # Sort installed packages according to size in MB (expac must be installed)
+alias gitpkg='pacman -Q | grep -i "\-git" | wc -l' # List amount of -git packages
+alias ip='ip -color'
+
+# Get fastest mirrors
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+
+# Help people new to Arch
+alias apt='man pacman'
+alias apt-get='man pacman'
+alias please='sudo'
+alias tb='nc termbin.com 9999'
+alias helpme='cht.sh --shell'
+alias pacdiff='sudo -H DIFFPROG=meld pacdiff'
+
+# Cleanup orphaned packages
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+
+# Get the error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+
+# Recent installed packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+export PATH="$HOME/.local/bin:$PATH"
+. "$HOME/.cargo/env"
